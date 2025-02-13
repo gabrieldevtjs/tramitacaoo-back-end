@@ -11,7 +11,7 @@ model Setor {
   id          Int        @id @default(autoincrement())
   sigla       String     @unique
   descricao   String
-
+  responsavel String @db.VarChar(255)
   documentos Documento[]
   tramiteEnvio Tramite[]  @relation("setorEnvio")
   tramiteRecebimento Tramite[] @relation("setorRecebimento")
