@@ -9,10 +9,10 @@ datasource db {
 
 model Setor {
   id          Int        @id @default(autoincrement())
-  sigla       String     @unique
-  descricao   String
+  sigla       String @db.VarChar(255) @unique
+  descricao   String @db.VarChar(255)
   responsavel String @db.VarChar(255)
-  documentos Documento[]
+
   tramiteEnvio Tramite[]  @relation("setorEnvio")
   tramiteRecebimento Tramite[] @relation("setorRecebimento")
 }
@@ -22,25 +22,33 @@ model Tramite {
   documentoId Int
   setorEnvioId Int
   dataEnvio DateTime @default(now())
-  setorRecebimentoId Int
+  setorRecebimentoId Int?
+  statusId Int 
   dataHoraRecebimento DateTime? 
 
+  status Status @relation(fields: [statusId], references: [id])
   setorEnvio Setor @relation("setorEnvio", fields: [setorEnvioId], references: [id])
-  setorRecebimento Setor @relation("setorRecebimento", fields: [setorRecebimentoId], references: [id])
+  setorRecebimento Setor? @relation("setorRecebimento", fields: [setorRecebimentoId], references: [id])
   documento Documento @relation(fields: [documentoId], references: [id]) 
 }
 
+
+model Status {
+  id Int @id @default(autoincrement())
+  situacao String @db.VarChar(255)
+  tramite Tramite[]
+}
+
+
 model Documento {
   id Int @id @default(autoincrement())
-  nmrDocumento Int @unique
-  setorCreateId Int
+  nmrDocumento String @unique
+
   titulo String @db.VarChar(255)
   descricao String @db.VarChar(255)
   dataCadastro DateTime @default(now())
-  path String
-
-  setor Setor @relation(fields: [setorCreateId], references: [id])
-
+  arquivo Bytes
+  
   tipoDocumentoId Int
   tipoDocumento TipoDocumento @relation(fields: [tipoDocumentoId], references: [id])
 
@@ -49,6 +57,6 @@ model Documento {
 
 model TipoDocumento {
   id          Int        @id @default(autoincrement())  
-  tipo        String
+  tipo        String @db.VarChar(255)
   documentos  Documento[]
 }
