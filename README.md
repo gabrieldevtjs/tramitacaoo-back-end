@@ -33,6 +33,7 @@ npm run start:dev
 
 Certifique-se de ter o Node.js instalado
 Execute npm install antes de iniciar o projeto
+Erros de regra de negócio serão exibidos no terminal.
 
 
 # Observação Importante
