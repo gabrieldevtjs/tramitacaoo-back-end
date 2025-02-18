@@ -1,35 +1,37 @@
-Backend da Aplicação
-🔧 Tecnologias Utilizadas
+#Backend da Aplicação
 
-NestJS - Framework principal
-PostgreSQL - Banco de dados
-Prisma - ORM
-Express - Framework web
-API REST - Arquitetura de API
 
-⚡ Pré-requisitos
+##🔧 Tecnologias Utilizadas
+
+- **NestJS** - Framework principal
+- **PostgreSQL** - Banco de dados
+- **Prisma** - ORM
+- **Express** - Framework web
+- **API REST** - Arquitetura de API
+
+##⚡ Pré-requisitos
 Para rodar este projeto, você precisa ter instalado:
 
-Node.js (versão 14 ou superior)
+- **Node.js** (versão 14 ou superior)
 
 
 🚀 Instalação
-Clone o repositório
+### Passo 1: Clone o repositório
 
 git clone seu-repositorio
 cd nome-do-projeto
 
 
-Instale as dependências
+### Passo 2: Instale as dependências
 npm install
 
 
-Inicie o projeto
+### Passo 3: Inicie o projeto
 # Desenvolvimento
 npm run start:dev
 
 
-📝 Notas Importantes
+#📝 Notas Importantes
 
 Certifique-se de ter o Node.js instalado
 Execute npm install antes de iniciar o projeto
