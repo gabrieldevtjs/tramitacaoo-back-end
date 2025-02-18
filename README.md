@@ -9,10 +9,14 @@
 - **Express** - Framework web
 - **API REST** - Arquitetura de API
 
+- 
+
 ##⚡ Pré-requisitos
 Para rodar este projeto, você precisa ter instalado:
 
 - **Node.js** (versão 14 ou superior)
+
+
 
 
 🚀 Instalação
@@ -27,8 +31,9 @@ npm install
 
 
 ### Passo 3: Inicie o projeto
-# Desenvolvimento
 npm run start:dev
+
+
 
 
 #📝 Notas Importantes
@@ -36,6 +41,9 @@ npm run start:dev
 Certifique-se de ter o Node.js instalado
 Execute npm install antes de iniciar o projeto
 Erros de regra de negócio serão exibidos no terminal.
+
+
+
 
 
 # Observação Importante
